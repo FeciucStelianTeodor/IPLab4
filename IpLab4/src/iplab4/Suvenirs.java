@@ -5,7 +5,6 @@ package iplab4;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.ListIterator;
@@ -18,12 +17,14 @@ import java.io.IOException;
  * @author Catalin
  */
 public class Suvenirs {
+
     LinkedList<Suvenir> listaS = new LinkedList<>();
     Suvenir aux;
 
-    public void Add(Suvenir suvenir){
+    public void Add(Suvenir suvenir) {
         listaS.add(suvenir);
     }
+
     public void InsertSuvsFromFile(String FILENAME) {
         String[] tokens;
         try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
@@ -39,72 +40,74 @@ public class Suvenirs {
                 s.pret = Integer.parseInt(tokens[4]);
                 listaS.add(s);
             }
-            
-        }
-        catch(IOException e){
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    
-    Suvenirs SearchByCategorie(String categorie){
+
+    Suvenirs SearchByCategorie(String categorie) {
         Suvenirs result = new Suvenirs();
-        ListIterator<Suvenir>  listIterator = listaS.listIterator();
-        while(listIterator.hasNext()){
+        ListIterator<Suvenir> listIterator = listaS.listIterator();
+        while (listIterator.hasNext()) {
             aux = listIterator.next();
-            if(aux.categorie == categorie){
+            if (aux.categorie == categorie) {
                 result.Add(aux);
             }
-    }
+        }
         System.out.println(result);
         return result;
-}
-        public Suvenirs SearchByNume(String nume){
-        Suvenirs result = new Suvenirs();
-        ListIterator<Suvenir>  listIterator = listaS.listIterator();
-        while(listIterator.hasNext()){
-            aux = listIterator.next();
-            if(aux.nume == nume){
-                result.Add(aux);
-            }
     }
-                System.out.println(result);
-        return result;
-}
-        public Suvenirs SearchById(int id){
+
+    public Suvenirs SearchByNume(String nume) {
         Suvenirs result = new Suvenirs();
-        ListIterator<Suvenir>  listIterator = listaS.listIterator();
-        while(listIterator.hasNext()){
+        ListIterator<Suvenir> listIterator = listaS.listIterator();
+        while (listIterator.hasNext()) {
             aux = listIterator.next();
-            if(aux.id == id){
+            if (aux.nume == nume) {
                 result.Add(aux);
             }
-    }        System.out.println(result);
+        }
+        System.out.println(result);
         return result;
-}
-         public void loadSuvenirs(){//TODO: we read from file the data of suvenirs
-             
-         }
-         
-         public void updateById( int id, Suvenir suvenir){
-        ListIterator<Suvenir>  listIterator = listaS.listIterator();
-        while(listIterator.hasNext()){
+    }
+
+    public Suvenirs SearchById(int id) {
+        Suvenirs result = new Suvenirs();
+        ListIterator<Suvenir> listIterator = listaS.listIterator();
+        while (listIterator.hasNext()) {
             aux = listIterator.next();
-            if(aux.id == id){
+            if (aux.id == id) {
+                result.Add(aux);
+            }
+        }
+        System.out.println(result);
+        return result;
+    }
+
+    public void loadSuvenirs() {//TODO: we read from file the data of suvenirs
+
+    }
+
+    public void updateById(int id, Suvenir suvenir) {
+        ListIterator<Suvenir> listIterator = listaS.listIterator();
+        while (listIterator.hasNext()) {
+            aux = listIterator.next();
+            if (aux.id == id) {
                 aux = suvenir;
             }
+        }
     }
-         }
-         
-         public void removeById(int id){
-        ListIterator<Suvenir>  listIterator = listaS.listIterator();
-        while(listIterator.hasNext()){
+
+    public void removeById(int id) {
+        ListIterator<Suvenir> listIterator = listaS.listIterator();
+        while (listIterator.hasNext()) {
             aux = listIterator.next();
-            if(aux.id == id){
+            if (aux.id == id) {
                 listaS.remove(aux);
-                
+
             }
+        }
     }
-         }
-        
-        
+
 }

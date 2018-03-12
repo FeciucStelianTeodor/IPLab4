@@ -76,4 +76,11 @@ public class Server {
         }
         return false;
     }
+    
+    public void adaugarePersoana(Persoana persoana)
+    {
+        valide.add(persoana);
+        scriePersoaneValide();
+        logate.add(persoana);
+    }
 }
