@@ -27,7 +27,6 @@ public class IpLab4 {
         //Verificăm dacă persoana este validă
         if(server.doLogare(persoana))
         {
-            
         }
     }
     

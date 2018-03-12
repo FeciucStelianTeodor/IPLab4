@@ -25,6 +25,7 @@ public class Server {
 
     public Server() {
         this.valide = new LinkedList<>();
+        this.logate = new LinkedList<>();
         citestePersoaneValide();
     }
 
@@ -40,9 +41,9 @@ public class Server {
                 substrings = line.split(" ");
 
                 Persoana noua = new Persoana();
-                noua.setNume(substrings[0]);
-                noua.setEmail(substrings[1]);
-                noua.setCont(substrings[2]);
+                noua.setNume(substrings[0].trim());
+                noua.setEmail(substrings[1].trim());
+                noua.setCont(substrings[2].trim());
 
                 valide.add(noua);
             }
