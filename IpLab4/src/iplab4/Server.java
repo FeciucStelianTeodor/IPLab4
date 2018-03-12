@@ -64,14 +64,15 @@ public class Server {
         }
     }
 
-    private void doLogare(Persoana persoana) {
+    public boolean doLogare(Persoana persoana) {
         for (Persoana element : valide) {
             if (element.getNume().equals(persoana.getNume())
                     && element.getEmail().equals(persoana.getEmail())
                     && element.getCont().equals(persoana.getCont())) {
                 logate.add(persoana);
-                break;
+                return true;
             }
         }
+        return false;
     }
 }

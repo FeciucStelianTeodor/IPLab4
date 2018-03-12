@@ -1,4 +1,6 @@
-public abstract class Persoana {
+package iplab4;
+
+public class Persoana {
     String nume;
     String email;
     String cont;
