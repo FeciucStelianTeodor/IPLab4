@@ -28,4 +28,10 @@ public class Persoana {
     public void setCont(String cont) {
         this.cont = cont;
     }
+
+    @Override
+    public String toString() {
+        return "Persoana{" + "nume=" + nume + ", email=" + email + ", cont=" + cont + '}';
+    }
+    
 }
