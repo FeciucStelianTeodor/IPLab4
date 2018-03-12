@@ -10,4 +10,6 @@ Clase:
   atribute mostenite: nume, email, cont
   metode: publish(); withdrawMoney();
 4.SERVER
+  atribute:
+  metode: login(); log
 5.SUVENIR
