@@ -1,3 +1,5 @@
+package iplab4;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,6 +21,9 @@ public class Suvenirs {
     LinkedList<Suvenir> listaS = new LinkedList<>();
     Suvenir aux;
 
+    public void Add(Suvenir suvenir){
+        listaS.add(suvenir);
+    }
     public void InsertSuvsFromFile(String FILENAME) {
         String[] tokens;
         try (BufferedReader br = new BufferedReader(new FileReader(FILENAME))) {
@@ -32,8 +37,12 @@ public class Suvenirs {
                 s.nume = tokens[2];
                 s.poza = tokens[3];
                 s.pret = Integer.parseInt(tokens[4]);
+                listaS.add(s);
             }
-            listaS.add(s);
+            
+        }
+        catch(IOException e){
+            e.printStackTrace();
         }
     }
     
@@ -91,7 +100,8 @@ public class Suvenirs {
         while(listIterator.hasNext()){
             aux = listIterator.next();
             if(aux.id == id){
-                aux.pop();
+                listaS.remove(aux);
+                
             }
     }
          }
